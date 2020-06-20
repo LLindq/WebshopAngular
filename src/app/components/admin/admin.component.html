@@ -1,0 +1,24 @@
+ <div class="columns is-mobile is-tablet is-centered">
+    <div class="column is-half-mobile is-half-tablet is-full-desktop ">
+        <table class="table">
+          <thead>
+            <tr>
+              <th><p> Your order no:</p></th>
+              <th><p>Payment Method:</p></th>
+              <th><p>Date:</p></th>
+              <th><p>Products:</p></th>
+              <th><p>Total Price:</p></th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let order of theDatabase">
+            <tr>
+              <th class=""><p>{{ order.Id }}</p></th>
+              <th><p>{{ order.paymentMethod }}</p></th>
+              <th><p>{{ order.created | date:'medium' }}</p></th>
+              <th><p *ngFor="let row of order.products">Movie no.{{ row.productId}}, #{{row.amount}}</p></th>
+              <th><p>{{ order.totalPrice }} Kr</p></th>
+        </table>
+    </div>
+  </div>
+
+

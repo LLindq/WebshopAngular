@@ -1,0 +1,15 @@
+.card{
+
+  border: solid white 2px;
+  .card-footer{
+    background-color: black;
+    border: none;
+    .card-footer-item {
+    background-color: transparent;
+    border: solid white 2px;
+  }
+    button {
+      color: white;
+    }
+  }
+}

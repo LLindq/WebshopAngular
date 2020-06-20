@@ -1,0 +1,64 @@
+<div class="columns is-multiline is-centered" >
+    <div class="column is-2 " *ngFor="let cart of cart">
+      <div class="card is-shadowless " >
+        <div class="card-image">
+        <figure class="image">
+        <img [src]="cart.ImageUrl" />
+        </figure>
+        <div class="card-content is-overlay has-text-right">
+        <span class="tag is-white">
+        <h3 class="has-text-black">{{ cart.Price .toLocaleString('sv-SE', {style: 'currency', currency: 'SEK'}) }}</h3></span>
+        </div>
+        </div>
+        <footer class="card-footer">
+          <h2 class="is-size-5-mobile is-size-5-tablet is-size-4-desktop">{{ cart.Name }}</h2><br>
+        </footer>
+        <footer class="card-footer has-text-light">
+            <button class="btn is-size-5 has-text-light" (click)="increaseItemInCart(cart)">+</button>
+            <span class="is-size-5-mobile is-size-5-tablet is-size-4-desktop">{{ cart.Quantity }}</span>
+            <button class="btn is-size-5 has-text-light" (click)="decreaseFromCart(cart)">-</button>
+        </footer>
+        </div>
+    </div>
+  </div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="placeOrder()">
+
+<div class="columns is-centered">
+  <div class="column is-4 has-text-centered">
+    <!-- /// Name  -->
+    <div class="field is-block form-spacing">
+      <label for="name" class="label">First & Lastname</label>
+      <div class="control">
+        <input class="input" type="text" id="name" formControlName="name" placeholder="First and Lastname">
+        <div *ngIf="name.touched && name.invalid">Enter your name above</div>
+      </div>
+    </div>
+    <!-- /// Email  -->
+    <div class="field is-block form-spacing  ">
+      <label for="email" class="label">Email</label>
+      <div class="control">
+        <input class="input" type="text" id="email" formControlName="email" placeholder="Email">
+        <div *ngIf="email.touched && email.invalid">Enter your email above</div>
+      </div>
+    </div>
+    <!-- /// Payment  -->
+    <div class="field is-block form-spacing">
+    <label for="payment">Payments</label>
+      <select class="custom-select" (change)="changePayment($event)" formControlName="paymentMethod">
+        <option value="" disabled>Choose payment</option>
+        <option *ngFor="let payment of payments" [ngValue]="payment">{{payment}}</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary" [disabled]="checkoutForm.invalid">Submit</button>
+    </div>
+    <div>
+      <span>Your total price is: <b>{{ purchasePrice }} kr</b> </span>
+    </div>
+  </div>
+</div>
+</form>
+
+
+

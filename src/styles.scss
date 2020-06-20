@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* Variables */
+$fontcolor: #ffffff;
+$maincolor: #484848;
+$bgcolor: #131722;
+$font: 'Noto Sans JP', sans-serif;
+
+body {
+ margin-top: 0;
+ margin-bottom: 0;
+ min-height: 100vh;
+
+ .mainContainer {
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ background-size: cover;
+ -o-background-size: cover;
+ font-family: $font;
+ margin: 0 auto;
+ }
+}
+
+h1 {
+ font-weight: 600;
+ line-height: 1.4;
+}
+
+h2 {
+ font-weight: 600;
+ line-height: 1.4;
+}
+
+h3 {
+ font-weight: 600;
+ font-size: 18px;
+ line-height: 1.4;
+}
+
+p {
+ font-weight: 400;
+ line-height: 1.7;
+}
+
+span {
+ line-height: 1.7;
+}
+
+button {
+ font-weight: 700;
+}
+
+
+body {
+  background: linear-gradient(-45deg, #000000, #74b0c6,  #74b0c6, #000000);
+  background-size: auto;
+  animation: gradient 15s ease infinite;
+  color: black;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+

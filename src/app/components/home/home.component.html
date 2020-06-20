@@ -1,0 +1,34 @@
+<div class="column is-full" id="one">
+      <h1 class="is-size-3-mobile is-size-2-tablet is-size-1-desktop has-text-centered">Welcome to FED-FLIX</h1>
+      <p class="has-text-centered">A fine place to buy your movies</p>
+     </div>
+
+<div class="columns is-multiline" >
+      <div class="column is-3" *ngFor="let movie of movies">
+        <div class="card is-shadowless" >
+          <div class="card-image">
+          <figure class="image">
+          <img [src]="movie.ImageUrl" />
+          </figure>
+          <div class="card-content is-overlay has-text-right">
+          <span class="tag is-white">
+          <h3 class="has-text-black">{{ movie.Price .toLocaleString('sv-SE', {style: 'currency', currency: 'SEK'}) }}</h3></span>
+          </div>
+          </div>
+          <footer class="card-footer">
+
+          <a class="cart-footer-item" routerLink="/details/{{movie.Id}}">
+          <h2 class="is-size-5-mobile is-size-5-tablet is-size-4-desktop">{{ movie.Name }}</h2></a>
+          </footer>
+
+          <footer class="card-footer">
+          <a class="card-footer-item" (click)="addProductToCart(movie)">
+          <p class="has-text-weight-semibold is-size-6-mobile is-size-6-tablet is-size-6-desktop has-text-light">BUY </p>
+          </a>
+          </footer>
+          </div>
+      </div>
+    </div>
+
+
+

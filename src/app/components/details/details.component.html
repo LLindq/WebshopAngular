@@ -1,0 +1,19 @@
+<div class="columns is-full is-centered" *ngIf="movie">
+  <div class="column has-text-centered mt-5">
+    <p class="is-centered">
+        <img [src]="movie.ImageUrl" />
+    </p>
+  </div>
+</div>
+<div class="columns is-centered is-multiline" *ngIf="movie">
+  <div class="column is-full has-text-centered p-0">
+      <span class="">{{ movie.Name }}, {{ movie.Price }} kr </span>
+  </div>
+  <div class="column is-full has-text-centered p-0">
+      <a class="card-footer-item" (click)="addProductToCart(movie)">
+        <button class="button"><span class="has-text-weight-semibold is-size-6-mobile is-size-6-tablet is-size-6-desktop has-text-dark">BUY</span></button>
+      </a>
+  </div>
+
+</div>
+

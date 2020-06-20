@@ -1,0 +1,36 @@
+.headerInfo{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 25px;
+  color: white;
+  .headerLogo{
+    display: flex;
+    img{
+    height: auto;
+    width: 60px;
+    justify-content: left;
+    }
+  }
+    h1, h3 {
+      width: 100%;
+    }
+}
+.nav {
+  font-size: 1.4em;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.ulnav{
+  color: white;
+}
+.linav{
+  display: inline;
+  color: white;
+}
+
+a {
+  color: white;
+}

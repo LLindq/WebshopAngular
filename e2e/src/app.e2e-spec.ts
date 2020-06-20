@@ -1,5 +1,6 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
+import { Input } from '@angular/core';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -8,10 +9,11 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should redirect to admin url', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('webshop app is running!');
-  });
+    page.moveToAdmin().click();
+    expect(browser.getCurrentUrl()).toContain('/admin');
+  })
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
